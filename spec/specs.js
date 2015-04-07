@@ -12,11 +12,16 @@ describe("titleCase", function() {
     });
 
     it("capitalizes the first letter of every word excluding and in a multiple word sentence", function() {
-        expect(titleCase("hansel and gretel")).to.equal("Hansel and Gretel");
+        expect(titleCase("mack the knife")).to.equal("Mack the Knife");
     });
 
     it("returns a title with every word capitalized excluding 'and'", function() {
-        expect(titleCase("Hansel AND gretel")).to.equal("Hansel and Gretel");
+        expect(titleCase("mack THE knife")).to.equal("Mack the Knife");
     });
+
+    it("returns a title with every word capitalized including 'the' when 'the' is at the beginning of the sentence", function() {
+        expect(titleCase("the little mermaid")).to.equal("The Little Mermaid");
+    });
+
 
 });

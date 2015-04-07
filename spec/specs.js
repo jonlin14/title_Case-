@@ -15,12 +15,19 @@ describe("titleCase", function() {
         expect(titleCase("mack the knife")).to.equal("Mack the Knife");
     });
 
-    it("returns a title with every word capitalized excluding 'and'", function() {
+    it("returns a title with every word capitalized excluding 'the'", function() {
         expect(titleCase("mack THE knife")).to.equal("Mack the Knife");
     });
 
     it("returns a title with every word capitalized including 'the' when 'the' is at the beginning of the sentence", function() {
         expect(titleCase("the little mermaid")).to.equal("The Little Mermaid");
+    });
+
+    it("returns a title with every word capitalized excluding 'and'", function() {
+        expect(titleCase("hansel AND gretel")).to.equal("Hansel and Gretel");
+    });
+    it("returns a title with every word capitalized excluding 'and'", function() {
+        expect(titleCase("Goldilocks AND THE three bears")).to.equal("Goldilocks and the Three Bears");
     });
 
 

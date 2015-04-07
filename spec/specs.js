@@ -11,4 +11,12 @@ describe("titleCase", function() {
         expect(titleCase("A long, long time ago")).to.equal("A Long, Long Time Ago");
     });
 
+    it("capitalizes the first letter of every word excluding and in a multiple word sentence", function() {
+        expect(titleCase("hansel and gretel")).to.equal("Hansel and Gretel");
+    });
+
+    it("returns a title with every word capitalized excluding 'and'", function() {
+        expect(titleCase("Hansel AND gretel")).to.equal("Hansel and Gretel");
+    });
+
 });

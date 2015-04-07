@@ -1,14 +1,14 @@
 
 var titleCase = function(input) {
 
-    var split_Sentence = input.split(" ");
+    var split_sentence = input.split(" ");
     var return_array = [];
-    var exceptions = ['and', 'the'];
+    var exceptions = ['and', 'the', 'in', 'an', 'a', 'but', 'or', 'for', 'nor', 'on', 'at', 'to', 'from', 'by'];
     var sentinel = 0;
     var output = null;
 
     for (var j = 0; j < 1; j++) {
-        var first_word_lc = split_Sentence[j].toLowerCase();
+        var first_word_lc = split_sentence[j].toLowerCase();
         var caps_first_letter = first_word_lc.charAt(0).toUpperCase();
         var length = first_word_lc.length;
         var rest_of_word = first_word_lc.substring(1,length);
@@ -16,14 +16,11 @@ var titleCase = function(input) {
         return_array.push(output);
     }
 
-    for (var i = 1; i < split_Sentence.length; i++)
+    for (var i = 1; i < split_sentence.length; i++)
     {
-        output = split_Sentence[i].toLowerCase();
-
         for (var j = 0; j < exceptions.length; j++)
         {
-            output = split_Sentence[i].toLowerCase();
-
+            output = split_sentence[i].toLowerCase();
             if (output === exceptions[j] ) {
                 sentinel = 1;
 
@@ -46,6 +43,6 @@ var titleCase = function(input) {
         return_array.push(output);
 
     }
-    var return_string = return_array.join(' ');
+    var return_string = return_array.join(" ");
     return return_string;
 };

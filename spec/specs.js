@@ -31,5 +31,17 @@ describe("titleCase", function() {
         expect(titleCase("Goldilocks AND THE three bears")).to.equal("Goldilocks and the Three Bears");
     });
 
+    it("returns a title with every word capitalized excluding 'and', longer sentence", function() {
+        expect(titleCase("Goldilocks AND THE AND THE AND THE three bears")).to.equal("Goldilocks and the and the and the Three Bears");
+    });
+
+    it("returns a title with every word capitalized excluding 'in'", function() {
+        expect(titleCase("cat in the hat")).to.equal("Cat in the Hat");
+    });
+
+    it("returns a title with every word capitalized exlucding any of the exceptions", function() {
+        expect(titleCase("A long, long time ago in a galaxy far far away BUT not too far")).to.equal("A Long, Long Time Ago in a Galaxy Far Far Away but Not Too Far");
+    });
+
 
 });

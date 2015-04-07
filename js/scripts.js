@@ -46,18 +46,15 @@ var titleCase = function(input) {
     return return_string;
 };
 
-$(document).ready(function (){
+$(document).ready(function() {
+    $("form#sentence").submit(function(event) {
+        var input_sentence = $("input#input_sentence").val();
+        var result = titleCase(input_sentence);
 
-    $("form#sentences").submit(function(event) {
-        var input = $("input#input-sentence").val();
-        var result = titleCase(input);
-        $(".result").text(input);
+        $("#input_column").append("<li>" + input_sentence + "</li>");
+        $("#output_column").append("<li>" + result + "</li>");
 
-        $("ul#input").append("<li>" + input + "</li>");
 
-        $("ul#output").append("<li>" + result + "</li>");
-        $("#result").show();
         event.preventDefault();
     });
-
 });

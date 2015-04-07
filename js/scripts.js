@@ -1,4 +1,3 @@
-
 var titleCase = function(input) {
 
     var split_sentence = input.split(" ");
@@ -46,3 +45,19 @@ var titleCase = function(input) {
     var return_string = return_array.join(" ");
     return return_string;
 };
+
+$(document).ready(function (){
+
+    $("form#sentences").submit(function(event) {
+        var input = $("input#input-sentence").val();
+        var result = titleCase(input);
+        $(".result").text(input);
+
+        $("ul#input").append("<li>" + input + "</li>");
+
+        $("ul#output").append("<li>" + result + "</li>");
+        $("#result").show();
+        event.preventDefault();
+    });
+
+});

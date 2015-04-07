@@ -7,4 +7,8 @@ describe("titleCase", function() {
         expect(titleCase("cat hat")).to.equal("Cat Hat");
     });
 
+    it("capitalizes the first letter of every word in a many word sentence", function() {
+        expect(titleCase("A long, long time ago")).to.equal("A Long, Long Time Ago");
+    });
+
 });
